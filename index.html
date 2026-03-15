@@ -17,6 +17,20 @@
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@300;400;500;600&display=swap"
     rel="stylesheet" />
 
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript" src="./assets/js/cred.js"></script>
+  <script type="text/javascript">
+    (function () {
+      // Credentials are loaded from assets/js/cred.js
+      if (typeof CRED !== 'undefined' && CRED.EMAILJS_PUBLIC_KEY) {
+        emailjs.init({
+          publicKey: CRED.EMAILJS_PUBLIC_KEY,
+        });
+      }
+    })();
+  </script>
+
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -425,6 +439,11 @@
 
     .dark .contact-input:focus {
       box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    }
+
+    .contact-input.error {
+      border-color: #ef4444 !important;
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
     }
 
     /* Floating decorations */
@@ -1827,30 +1846,67 @@
         <div class="reveal-right">
           <div class="card-dark rounded-2xl p-6">
             <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white mb-5">Send a Message</h3>
-            <div class="space-y-4" id="contact-form">
-              <div>
+            <form class="space-y-4" id="contact-form">
+              <!-- Honeypot field (hidden from users) -->
+              <div class="hidden" aria-hidden="true">
+                <input type="text" name="_honey" id="honey" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <div class="space-y-1">
                 <label for="name"
                   class="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5">Name</label>
-                <input type="text" id="name" placeholder="Your name"
-                  class="contact-input w-full px-4 py-2.5 rounded-lg text-sm" aria-required="true" />
+                <input type="text" id="name" name="user_name" placeholder="Your name"
+                  class="contact-input w-full px-4 py-2.5 rounded-lg text-sm" required aria-required="true" />
+                <p id="name-error" class="text-[10px] text-red-500 hidden mt-1 font-mono"></p>
               </div>
-              <div>
+
+              <div class="space-y-1">
                 <label for="email"
                   class="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5">Email</label>
-                <input type="email" id="email" placeholder="your@email.com"
-                  class="contact-input w-full px-4 py-2.5 rounded-lg text-sm" aria-required="true" />
+                <input type="email" id="email" name="user_email" placeholder="your@email.com"
+                  class="contact-input w-full px-4 py-2.5 rounded-lg text-sm" required aria-required="true" />
+                <p id="email-error" class="text-[10px] text-red-500 hidden mt-1 font-mono"></p>
               </div>
-              <div>
+
+              <div class="space-y-1">
                 <label for="message"
                   class="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5">Message</label>
-                <textarea id="message" rows="4" placeholder="What's on your mind?"
-                  class="contact-input w-full px-4 py-2.5 rounded-lg text-sm resize-none"
+                <textarea id="message" name="message" rows="4" placeholder="What's on your mind?"
+                  class="contact-input w-full px-4 py-2.5 rounded-lg text-sm resize-none" required
                   aria-required="true"></textarea>
+                <p id="message-error" class="text-[10px] text-red-500 hidden mt-1 font-mono"></p>
               </div>
-              <button onclick="handleFormSubmit()" class="w-full btn-primary py-2.5 rounded-lg text-sm font-medium">
-                Send Message
+
+              <div class="space-y-1">
+                <label for="captcha-input" class="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5">
+                  Human Verification: <span id="captcha-question" class="font-mono text-indigo-500"></span>
+                </label>
+                <div class="flex gap-2">
+                  <input type="text" id="captcha-input" placeholder="Answer"
+                    class="contact-input w-24 px-4 py-2.5 rounded-lg text-sm" required />
+                  <button type="button" onclick="UI.refreshCaptcha()"
+                    class="text-slate-400 hover:text-indigo-500 transition-colors" title="Refresh CAPTCHA">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                  </button>
+                </div>
+                <p id="captcha-error" class="text-[10px] text-red-500 hidden mt-1 font-mono"></p>
+              </div>
+
+              <button type="submit" id="send-message"
+                class="w-full btn-primary py-2.5 rounded-lg text-sm font-medium flex items-center justify-center gap-2">
+                <span>Send Message</span>
+                <svg id="loading-spinner" class="w-4 h-4 animate-spin hidden" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none">
+                  </circle>
+                  <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                  </path>
+                </svg>
               </button>
-            </div>
+            </form>
             <div id="form-success" class="hidden text-center py-8">
               <div
                 class="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center mx-auto mb-3">

@@ -199,39 +199,146 @@ const UI = (() => {
 
 
   /* ── Contact Form ───────────────────────────────────── */
-  function initContactForm() {
-    document.getElementById('send-message')?.addEventListener('click', handleSubmit);
+  let captchaAnswer = 0;
 
-    ['name','email','message'].forEach(id => {
-      document.getElementById(id)?.addEventListener('input', clearError.bind(null, id));
+  function initCaptcha() {
+    const questionEl = document.getElementById('captcha-question');
+    if (!questionEl) return;
+
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    captchaAnswer = num1 + num2;
+    questionEl.textContent = `${num1} + ${num2} = ?`;
+  }
+
+  function refreshCaptcha() {
+    initCaptcha();
+    const input = document.getElementById('captcha-input');
+    if (input) {
+      input.value = '';
+      clearError('captcha');
+    }
+  }
+
+  function initContactForm() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    initCaptcha();
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      handleSubmit(form);
+    });
+
+    ['name', 'email', 'message', 'captcha'].forEach(id => {
+      const el = document.getElementById(id === 'captcha' ? 'captcha-input' : id);
+      if (el) {
+        el.addEventListener('input', () => clearError(id));
+        el.addEventListener('blur', () => validateField(id));
+      }
     });
   }
 
-  function handleSubmit() {
-    const name    = document.getElementById('name')?.value.trim();
-    const email   = document.getElementById('email')?.value.trim();
+  function validateEmail(email) {
+    return String(email)
+      .toLowerCase()
+      .match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+  }
+
+  function validateField(id) {
+    const el = document.getElementById(id === 'captcha' ? 'captcha-input' : id);
+    const val = el?.value.trim();
+    if (id === 'name' && !val) {
+      showError('name', 'Please enter your name');
+      return false;
+    }
+    if (id === 'email') {
+      if (!val) {
+        showError('email', 'Email is required');
+        return false;
+      }
+      if (!validateEmail(val)) {
+        showError('email', 'Please enter a valid email');
+        return false;
+      }
+    }
+    if (id === 'message' && !val) {
+      showError('message', 'Message cannot be empty');
+      return false;
+    }
+    if (id === 'captcha') {
+      if (!val) {
+        showError('captcha', 'Human check is required');
+        return false;
+      }
+      if (parseInt(val) !== captchaAnswer) {
+        showError('captcha', 'Incorrect answer');
+        return false;
+      }
+    }
+    clearError(id);
+    return true;
+  }
+
+  async function handleSubmit(form) {
+    const honey = document.getElementById('honey')?.value;
+    if (honey) {
+      console.warn('Spam detected');
+      return;
+    }
+
+    const name = document.getElementById('name')?.value.trim();
+    const email = document.getElementById('email')?.value.trim();
     const message = document.getElementById('message')?.value.trim();
+    const captcha = document.getElementById('captcha-input')?.value.trim();
 
-    let valid = true;
-    if (!name)    { showError('name', 'Name is required');           valid = false; }
-    if (!email || !email.includes('@')) { showError('email', 'Valid email required'); valid = false; }
-    if (!message) { showError('message', 'Message cannot be empty'); valid = false; }
+    const isNameValid = validateField('name');
+    const isEmailValid = validateField('email');
+    const isMsgValid = validateField('message');
+    const isCaptchaValid = validateField('captcha');
 
-    if (!valid) return;
+    if (!isNameValid || !isEmailValid || !isMsgValid || !isCaptchaValid) return;
 
-    document.getElementById('contact-form')?.classList.add('hidden');
-    document.getElementById('form-success')?.classList.remove('hidden');
+    const btn = document.getElementById('send-message');
+    const spinner = document.getElementById('loading-spinner');
+    const btnText = btn?.querySelector('span');
+
+    // Loading state
+    if (btn) btn.disabled = true;
+    if (spinner) spinner.classList.remove('hidden');
+    if (btnText) btnText.textContent = 'Sending...';
+
+    try {
+      // Use emailjs to send the form
+      // Credentials are loaded from assets/js/cred.js
+      const res = await emailjs.sendForm(CRED.EMAILJS_SERVICE_ID, CRED.EMAILJS_TEMPLATE_ID, form);
+
+      if (res.status === 200) {
+        form.classList.add('hidden');
+        document.getElementById('form-success')?.classList.remove('hidden');
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Email Error:', error);
+      showError('message', 'Something went wrong. Please try again or email me directly.');
+    } finally {
+      if (btn) btn.disabled = false;
+      if (spinner) spinner.classList.add('hidden');
+      if (btnText) btnText.textContent = 'Send Message';
+    }
   }
 
   function showError(id, msg) {
     const el = document.getElementById(id + '-error');
     if (el) { el.textContent = msg; el.classList.remove('hidden'); }
-    document.getElementById(id)?.classList.add('border-red-400');
+    document.getElementById(id)?.classList.add('error');
   }
 
   function clearError(id) {
     document.getElementById(id + '-error')?.classList.add('hidden');
-    document.getElementById(id)?.classList.remove('border-red-400');
+    document.getElementById(id)?.classList.remove('error');
   }
 
   /* ── Mantra Scroll Band ─────────────────────────────── */
@@ -362,5 +469,5 @@ const UI = (() => {
     initHeroImageSwitcher();
   }
 
-  return { init, nextWisdom, applyDark, toggleReadMore };
+  return { init, nextWisdom, applyDark, toggleReadMore, refreshCaptcha };
 })();
