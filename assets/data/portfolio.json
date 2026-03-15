@@ -1,0 +1,551 @@
+{
+  "meta": {
+    "name": "Tilak Poudel",
+    "roles": [
+      "Software Engineer",
+      "Data Science Explorer",
+      "Educator & Thinker"
+    ],
+    "tagline": "Building scalable systems, exploring intelligent data, and sharing timeless wisdom.",
+    "location": "Kathmandu, Nepal",
+    "email": "tilakpoudel.314@gmail.com",
+    "github": "https://github.com/tilakpoudel",
+    "linkedin": "https://linkedin.com/in/tilakpoudel",
+    "medium": "https://medium.com/@tilakpoudel",
+    "photo": "assets/images/tilakpoudel.jpeg",
+    "available": true
+  },
+  "stats": [
+    {
+      "value": "7+",
+      "label": "Years Engineering",
+      "color": "indigo"
+    },
+    {
+      "value": "300+",
+      "label": "Students Mentored",
+      "color": "amber"
+    },
+    {
+      "value": "50+",
+      "label": "Seminars Delivered",
+      "color": "emerald"
+    },
+    {
+      "value": "1K+",
+      "label": "Lives Touched",
+      "color": "violet"
+    }
+  ],
+  "quotes": [
+    {
+      "text": "Yogaḥ karmasu kauśalam.",
+      "source": "Bhagavad Gita, 2.50",
+      "translation": "Excellence in action is yoga."
+    },
+    {
+      "text": "First solve the problem, then write the code.",
+      "source": "John Johnson",
+      "translation": ""
+    },
+    {
+      "text": "Nāsti buddhi-ayuktasya, na cāyuktasya bhāvanā.",
+      "source": "Bhagavad Gita, 2.66",
+      "translation": "The undisciplined mind has no wisdom, no meditation."
+    },
+    {
+      "text": "Any fool can write code a computer understands. Good programmers write code humans understand.",
+      "source": "Martin Fowler",
+      "translation": ""
+    },
+    {
+      "text": "Uddhared ātmanā'tmānaṁ.",
+      "source": "Bhagavad Gita, 6.5",
+      "translation": "Elevate yourself through the power of your own mind."
+    },
+    {
+      "text": "Make it work, make it right, make it fast.",
+      "source": "Kent Beck",
+      "translation": ""
+    },
+    {
+      "text": "Karmaṇy-evādhikāras te mā phaleṣu kadācana.",
+      "source": "Bhagavad Gita, 2.47",
+      "translation": "You have the right to perform your actions, not to claim their fruits."
+    },
+    {
+      "text": "The best code is no code at all.",
+      "source": "Jeff Atwood",
+      "translation": ""
+    },
+    {
+      "text": "Śraddhāvān labhate jñānam.",
+      "source": "Bhagavad Gita, 4.39",
+      "translation": "The faithful and earnest seeker gains knowledge."
+    }
+  ],
+  "wisdomQuotes": [
+    {
+      "sanskrit": "Yogaḥ karmasu kauśalam.",
+      "translation": "Excellence in action is yoga.",
+      "source": "Bhagavad Gita 2.50"
+    },
+    {
+      "sanskrit": "Karmaṇy-evādhikāras te mā phaleṣu kadācana.",
+      "translation": "You have the right to act, but never to claim the fruits of action.",
+      "source": "Bhagavad Gita 2.47"
+    },
+    {
+      "sanskrit": "Uddhared ātmanā'tmānaṁ.",
+      "translation": "Elevate yourself through the power of your own mind.",
+      "source": "Bhagavad Gita 6.5"
+    },
+    {
+      "sanskrit": "Tasmād asaktaḥ satataṁ kāryaṁ karma samācara.",
+      "translation": "Without attachment, constantly perform actions that are your duty.",
+      "source": "Bhagavad Gita 3.19"
+    },
+    {
+      "sanskrit": "Śraddhāvān labhate jñānam.",
+      "translation": "The faithful and earnest seeker gains knowledge.",
+      "source": "Bhagavad Gita 4.39"
+    },
+    {
+      "sanskrit": "Nāsti buddhi-ayuktasya, na cāyuktasya bhāvanā.",
+      "translation": "The undisciplined mind has no wisdom, no meditation, no peace.",
+      "source": "Bhagavad Gita 2.66"
+    }
+  ],
+  "skills": [
+    {
+      "layer": "Applications",
+      "icon": "monitor",
+      "color": "indigo",
+      "items": [
+        {
+          "name": "React / Vue",
+          "level": 85
+        },
+        {
+          "name": "Flutter",
+          "level": 70
+        }
+      ],
+      "chips": [
+        "HTML/CSS",
+        "Tailwind",
+        "TypeScript"
+      ]
+    },
+    {
+      "layer": "Backend",
+      "icon": "server",
+      "color": "emerald",
+      "items": [
+        {
+          "name": "Laravel / PHP",
+          "level": 90
+        },
+        {
+          "name": "Node.js",
+          "level": 78
+        }
+      ],
+      "chips": [
+        "REST APIs",
+        "GraphQL",
+        "mTLS"
+      ]
+    },
+    {
+      "layer": "Data Science",
+      "icon": "chart",
+      "color": "amber",
+      "items": [
+        {
+          "name": "Python / Pandas",
+          "level": 82
+        },
+        {
+          "name": "ML Foundations",
+          "level": 72
+        }
+      ],
+      "chips": [
+        "NumPy",
+        "Matplotlib",
+        "NLP"
+      ]
+    },
+    {
+      "layer": "Infrastructure",
+      "icon": "layers",
+      "color": "violet",
+      "items": [
+        {
+          "name": "Docker / CI/CD",
+          "level": 85
+        },
+        {
+          "name": "PostgreSQL / Redis",
+          "level": 88
+        }
+      ],
+      "chips": [
+        "AWS",
+        "Linux",
+        "Security"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Engineer",
+      "company": "DzangoLab",
+      "period": "2021 – Present",
+      "color": "indigo",
+      "achievements": [
+        "Improved database query performance by <strong>30%</strong> through advanced indexing and optimization",
+        "Implemented secure <strong>mTLS authentication</strong> across microservices architecture",
+        "Built Docker-based CI/CD pipeline reducing deployment downtime by <strong>40%</strong>",
+        "Led feature flag architecture enabling safe, iterative feature releases"
+      ],
+      "chips": [
+        "Laravel",
+        "React",
+        "Docker",
+        "PostgreSQL",
+        "mTLS"
+      ]
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Bootwal R&D",
+      "period": "2018 – 2021",
+      "color": "amber",
+      "achievements": [
+        "Developed full-stack web applications for R&D projects from concept to deployment",
+        "Designed and implemented RESTful APIs with robust authentication systems",
+        "Collaborated on agile research teams delivering high-quality technical solutions"
+      ],
+      "chips": [
+        "Node.js",
+        "Vue.js",
+        "MySQL",
+        "REST API"
+      ]
+    },
+    {
+      "title": "Lecturer & Trainer",
+      "company": "Nepathya College",
+      "period": "2019 – 2025",
+      "color": "emerald",
+      "achievements": [
+        "Taught Algorithms, DBMS, and Programming to 300+ undergraduate students",
+        "Designed curriculum bridging theoretical CS with practical industry applications",
+        "Mentored students in project development and career preparation"
+      ],
+      "chips": [
+        "Algorithms",
+        "DBMS",
+        "Mentorship"
+      ]
+    }
+  ],
+  "journey": [
+    {
+      "year": "2015",
+      "title": "Started CSIT",
+      "sub": "BSc Computer Science",
+      "icon": "book",
+      "color": "indigo",
+      "active": false
+    },
+    {
+      "year": "2018",
+      "title": "Pro Development",
+      "sub": "Full Stack Engineer",
+      "icon": "code",
+      "color": "emerald",
+      "active": false
+    },
+    {
+      "year": "2021",
+      "title": "DzangoLab",
+      "sub": "Senior Engineer",
+      "icon": "flask",
+      "color": "indigo",
+      "active": true
+    },
+    {
+      "year": "2025",
+      "title": "MSc Data Science",
+      "sub": "Academic Research",
+      "icon": "chart",
+      "color": "amber",
+      "active": false
+    },
+    {
+      "year": "∞",
+      "title": "AI Systems",
+      "sub": "Intelligent Platforms",
+      "icon": "spark",
+      "color": "violet",
+      "active": false,
+      "future": true
+    }
+  ],
+  "projects": [
+    {
+      "title": "COVID Sentiment Analysis",
+      "category": "NLP · Research",
+      "color": "indigo",
+      "problem": "Understanding public emotional response to pandemic-era social media discourse at scale.",
+      "approach": "VADER + BERT-based NLP pipeline on 100K+ tweets with temporal trend analysis.",
+      "impact": "92% accuracy on test set",
+      "impactColor": "emerald",
+      "chips": [
+        "Python",
+        "NLTK",
+        "BERT",
+        "Pandas"
+      ],
+      "github": "https://github.com/tilakpoudel"
+    },
+    {
+      "title": "Bhagavad Gita Network Analysis",
+      "category": "Graph · Philosophy",
+      "color": "amber",
+      "problem": "Mapping the philosophical relationships and wisdom structure within the Bhagavad Gita.",
+      "approach": "Graph-based SNA using NetworkX to model conceptual connections between verses and teachings.",
+      "impact": "700+ nodes mapped",
+      "impactColor": "amber",
+      "chips": [
+        "NetworkX",
+        "Python",
+        "Gephi",
+        "NLP"
+      ],
+      "github": "https://github.com/tilakpoudel"
+    },
+    {
+      "title": "Agricultural Trend Analysis",
+      "category": "EDA · Agriculture",
+      "color": "emerald",
+      "problem": "Identifying crop yield patterns and climate correlations in Nepal's agricultural data.",
+      "approach": "Comprehensive EDA with time-series analysis, geospatial visualization, and predictive modeling.",
+      "impact": "10yr dataset analyzed",
+      "impactColor": "emerald",
+      "chips": [
+        "Pandas",
+        "Matplotlib",
+        "Seaborn",
+        "Sklearn"
+      ],
+      "github": "https://github.com/tilakpoudel"
+    }
+  ],
+  "articles": [
+    {
+      "title": "Advanced SQL Optimization Patterns",
+      "tag": "SQL · Database",
+      "summary": "Real-world strategies for query performance: indexing, partitioning, and avoiding N+1 pitfalls at scale."
+    },
+    {
+      "title": "Feature Flags Done Right",
+      "tag": "Architecture · DevOps",
+      "summary": "Architecting safe, gradual feature releases without the complexity overhead. Practical patterns for production."
+    },
+    {
+      "title": "An Engineer's Path to Data Science",
+      "tag": "Data Science · Journey",
+      "summary": "What I wish I knew when transitioning from software engineering to data science. Honest reflections."
+    },
+    {
+      "title": "The Bhagavad Gita for Software Engineers",
+      "tag": "Philosophy · Tech",
+      "summary": "Ancient wisdom applied to modern software craftsmanship — focus, detachment, and excellence in every commit."
+    },
+    {
+      "title": "Understanding mTLS in Microservices",
+      "tag": "Security · Backend",
+      "summary": "A practical guide to mutual TLS authentication — why it matters and how to implement it without pain."
+    },
+    {
+      "title": "Teaching Algorithms That Stick",
+      "tag": "Teaching · CS",
+      "summary": "How to teach complex CS algorithms in ways that build intuition, not just pattern memorization."
+    }
+  ],
+  "courses": [
+    {
+      "name": "Algorithms & Data Structures",
+      "desc": "Sorting, searching, graphs, dynamic programming — taught with visual intuition and industry examples.",
+      "color": "indigo",
+      "icon": "spark"
+    },
+    {
+      "name": "Database Management Systems",
+      "desc": "Relational theory, normalization, SQL mastery, and the art of designing schemas that scale.",
+      "color": "amber",
+      "icon": "db"
+    },
+    {
+      "name": "Programming Fundamentals",
+      "desc": "Object-oriented design, problem decomposition, clean code practices for beginners to intermediate.",
+      "color": "emerald",
+      "icon": "code"
+    }
+  ],
+  "service": {
+    "role": "Volunteer",
+    "org": "ISKCON Nepal",
+    "seminars": "50+",
+    "engaged": "1,000+",
+    "topics": [
+      "Discipline",
+      "Focus",
+      "Purpose",
+      "Healthy Living",
+      "Vedic Wisdom",
+      "Bhagavad Gita"
+    ]
+  },
+  "networkNodes": [
+    {
+      "id": 0,
+      "label": "Engineering\nMind",
+      "color": "#6366f1",
+      "center": true,
+      "angle": 0
+    },
+    {
+      "id": 1,
+      "label": "Backend\nEngineering",
+      "color": "#6366f1",
+      "center": false,
+      "angle": 0
+    },
+    {
+      "id": 2,
+      "label": "Data\nScience",
+      "color": "#f59e0b",
+      "center": false,
+      "angle": 60
+    },
+    {
+      "id": 3,
+      "label": "Databases",
+      "color": "#10b981",
+      "center": false,
+      "angle": 120
+    },
+    {
+      "id": 4,
+      "label": "DevOps",
+      "color": "#8b5cf6",
+      "center": false,
+      "angle": 180
+    },
+    {
+      "id": 5,
+      "label": "Teaching",
+      "color": "#ef4444",
+      "center": false,
+      "angle": 240
+    },
+    {
+      "id": 6,
+      "label": "Spiritual\nWisdom",
+      "color": "#f59e0b",
+      "center": false,
+      "angle": 300
+    }
+  ],
+  "networkNodeDetails": {
+    "Backend Engineering": {
+      "desc": "Laravel, Node.js, REST APIs, GraphQL, mTLS authentication, microservices architecture.",
+      "skills": [
+        "Laravel",
+        "Node.js",
+        "REST API",
+        "GraphQL",
+        "mTLS",
+        "PHP"
+      ]
+    },
+    "Data Science": {
+      "desc": "Python, Pandas, NumPy, NLP pipelines, sentiment analysis, social network analysis, EDA.",
+      "skills": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "NLTK",
+        "Sklearn",
+        "NLP"
+      ]
+    },
+    "Databases": {
+      "desc": "PostgreSQL, MySQL, Redis. Query optimization delivering 30% performance improvement.",
+      "skills": [
+        "PostgreSQL",
+        "MySQL",
+        "Redis",
+        "SQL",
+        "Indexing"
+      ]
+    },
+    "DevOps": {
+      "desc": "Docker, CI/CD pipelines, reduced deployment downtime by 40%, Linux server management.",
+      "skills": [
+        "Docker",
+        "CI/CD",
+        "Linux",
+        "AWS",
+        "Security"
+      ]
+    },
+    "Teaching": {
+      "desc": "Algorithms, DBMS, Programming. 300+ students mentored over 6 years at Nepathya College.",
+      "skills": [
+        "Algorithms",
+        "DBMS",
+        "Mentorship",
+        "Curriculum Design"
+      ]
+    },
+    "Spiritual Wisdom": {
+      "desc": "Volunteer Youth preacher at ISKCON Nepal. 50+ seminars, 1000+ students. Bhagavad Gita, discipline, purpose.",
+      "skills": [
+        "Bhagavad Gita",
+        "Discipline",
+        "Focus",
+        "Purpose",
+        "Leadership"
+      ]
+    }
+  },
+  "recommendations": [
+    {
+      "name": "Shreejana Gautam",
+      "position": "Software Quality Assurance Analyst | Talent-Share | Irvine, California, United States",
+      "text": "I highly recommend Tilak he taught me important skills in software testing, especially with Selenium and other tools. He engages students well with practical examples and creates a friendly learning environment. His deep knowledge of software devlopment helped me understand difficult concepts quickly. The hands-on projects were very helpful. He allowed me to practice what I learned in real situations. Tilak was always available for help and encouraged me to explore the subject more. Because of him, I have been able to build a solid foundation in software testing during my career.",
+      "avatar": "https://media.licdn.com/dms/image/v2/D4D03AQEcC3IVsrnFKA/profile-displayphoto-shrink_200_200/B4DZafB.f6GgAY-/0/1746424817992?e=1775088000&v=beta&t=5gEalyftrZnO8K-5X5d8y04tBW7W5UK9u5FQipR8zyI",
+      "url": "https://www.linkedin.com/in/shreejana-gautam-360448341/"
+    },
+    {
+      "name": "Sabir Manandhar",
+      "position": "Software Engineer @ Drive.com.au | Fullstack Developer, Software Engineering Manager",
+      "text": "I had the opportunity to manage and mentor Tilak at Dzango, where he consistently showed reliability and a willingness to learn. He approached tasks with dedication and was open to feedback, steadily improving his skills. While there were areas for growth, his perseverance and adaptability allowed him to contribute meaningfully to the team. I have no doubt that with continued experience, Tilak will keep developing their expertise. I wish him all the best in their career ahead.",
+      "avatar": "https://media.licdn.com/dms/image/v2/D5603AQGKnGXSPtuEdg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1671898150659?e=1775088000&v=beta&t=vBcmDnW4wsRU015vihIYumoitvNAW-Jvw2N11mPm2YY",
+      "url": "https://www.linkedin.com/in/manandharsabir/"
+    },
+    {
+      "name": "Sanjeev Bhandari",
+      "position": "Principal | Nepathya College",
+      "text": "An outstanding educator who inspires students. Tilak doesn't just teach code; he teaches problem-solving and philosophical discipline, which is rare in technical higher education.",
+      "avatar": "https://scontent.fktm20-1.fna.fbcdn.net/v/t39.30808-6/650479585_10173682750845507_6640784472402089484_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=7b2446&_nc_ohc=8hOTO0WDirgQ7kNvwHDrW4B&_nc_oc=AdmqYOhAY3e7vjd-e9-BYv5_7ZO5SiKRp0-g1y1hm06uI1DmjA0BN25Cep2nMPS25lfYIYzQYyng05BPa3rTYOLq&_nc_zt=23&_nc_ht=scontent.fktm20-1.fna&_nc_gid=HLEeNSVTAm7816Vx5imvQw&_nc_ss=8&oh=00_AfxV5AO9sEz3XkMiUlYxSaZNG58zZtR-l2vPNUp2mO39WQ&oe=69BC3BD1",
+      "url": "https://www.facebook.com/sanjeev.bhandari"
+    }
+  ]
+}
