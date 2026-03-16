@@ -311,8 +311,7 @@ const UI = (() => {
 
     try {
       // Use emailjs to send the form
-      // Credentials are loaded from assets/js/cred.js
-      const res = await emailjs.sendForm(CRED.EMAILJS_SERVICE_ID, CRED.EMAILJS_TEMPLATE_ID, form);
+      const res = await emailjs.sendForm("service_n7uo9m8", "template_7vjbj86", form);
 
       if (res.status === 200) {
         form.classList.add('hidden');

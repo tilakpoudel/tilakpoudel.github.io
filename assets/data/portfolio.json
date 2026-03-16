@@ -8,7 +8,7 @@
     ],
     "tagline": "Building scalable systems, exploring intelligent data, and sharing timeless wisdom.",
     "location": "Kathmandu, Nepal",
-    "email": "tilakpoudel.314@gmail.com",
+    "email": "whoistilak@gmail.com",
     "github": "https://github.com/tilakpoudel",
     "linkedin": "https://linkedin.com/in/tilakpoudel",
     "medium": "https://medium.com/@tilakpoudel",
@@ -526,6 +526,13 @@
     }
   },
   "recommendations": [
+    {
+      "name": "Richard Seltrecht",
+      "position": "Lead iOS and Android Software Manager | Wenow | France",
+      "text": "I highly recommend Tilak Poudel, who worked with us from February 2022 to December 2025 on our engagement and training platform. He demonstrated strong expertise in software development, consistently delivering reliable, high-quality improvements aligned with project needs. Tilak is collaborative, receptive to feedback, and proactive in suggesting improvements. He would be a valuable asset to any team seeking a skilled and dependable full-stack developer.",
+      "avatar": "https://media.licdn.com/dms/image/v2/D4E03AQHkEdiPhyW9-Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1678972820849?e=1775088000&v=beta&t=RpGlm76m75d0LdHlnGJY-nfduv19zX5IXz14cW0MUJM",
+      "url": "https://www.linkedin.com/in/rseltrecht/"
+    },
     {
       "name": "Shreejana Gautam",
       "position": "Software Quality Assurance Analyst | Talent-Share | Irvine, California, United States",
