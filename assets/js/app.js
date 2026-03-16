@@ -24,6 +24,8 @@
   renderCourses(data.courses);
   renderServiceTopics(data.service);
   renderRecommendations(data.recommendations);
+  renderOfferings(data.offerings);
+  renderClients(data.clients);
   setInitialWisdom(data.wisdomQuotes[0]);
   setHeroMeta(data.meta);
 
@@ -402,6 +404,55 @@
         </div>
       `;
     }).join('');
+  }
+
+  /* ── Offerings ───────────────────────────────────────── */
+  function renderOfferings(offerings) {
+    const el = document.getElementById('offerings-grid');
+    if (!el || !offerings) return;
+
+    const iconPaths = {
+      code:   `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>`,
+      mentor: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>`,
+      book:   `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>`,
+      spark:  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>`,
+    };
+
+    const colorMap = {
+      indigo:  'from-indigo-500 to-indigo-600 shadow-indigo-200 dark:shadow-indigo-900/20',
+      amber:   'from-amber-400 to-amber-500 shadow-amber-200 dark:shadow-amber-900/20',
+      emerald: 'from-emerald-400 to-emerald-500 shadow-emerald-200 dark:shadow-emerald-900/20',
+      violet:  'from-violet-500 to-violet-600 shadow-violet-200 dark:shadow-violet-900/20',
+    };
+
+    el.innerHTML = offerings.map((o, i) => `
+      <div class="glow-card ${o.color} p-8 reveal" style="transition-delay:${i * 0.12}s">
+        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br ${colorMap[o.color]} flex items-center justify-center text-white mb-6 shadow-xl transform group-hover:rotate-6 transition-transform">
+          <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            ${iconPaths[o.icon] || iconPaths.spark}
+          </svg>
+        </div>
+        <h3 class="font-display text-xl font-semibold text-slate-900 dark:text-white mb-4">${o.title}</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+          ${o.desc}
+        </p>
+      </div>
+    `).join('');
+  }
+
+  /* ── Clients ─────────────────────────────────────────── */
+  function renderClients(clients) {
+    const rail = document.getElementById('clients-rail');
+    if (!rail || !clients) return;
+
+    // Double the items for seamless loop
+    const doubled = [...clients, ...clients];
+    
+    rail.innerHTML = doubled.map(c => `
+      <a href="${c.url || '#'}" target="_blank" rel="noopener" class="logo-item" title="${c.name}">
+        <img src="${c.logo}" alt="${c.name} logo" class="max-h-16 transition-all">
+      </a>
+    `).join('');
   }
 
 })();

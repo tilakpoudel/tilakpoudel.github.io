@@ -554,5 +554,68 @@
       "avatar": "https://scontent.fktm20-1.fna.fbcdn.net/v/t39.30808-6/650479585_10173682750845507_6640784472402089484_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=7b2446&_nc_ohc=8hOTO0WDirgQ7kNvwHDrW4B&_nc_oc=AdmqYOhAY3e7vjd-e9-BYv5_7ZO5SiKRp0-g1y1hm06uI1DmjA0BN25Cep2nMPS25lfYIYzQYyng05BPa3rTYOLq&_nc_zt=23&_nc_ht=scontent.fktm20-1.fna&_nc_gid=HLEeNSVTAm7816Vx5imvQw&_nc_ss=8&oh=00_AfxV5AO9sEz3XkMiUlYxSaZNG58zZtR-l2vPNUp2mO39WQ&oe=69BC3BD1",
       "url": "https://www.facebook.com/sanjeev.bhandari"
     }
+  ],
+  "offerings": [
+    {
+      "title": "Software Development & Data Science",
+      "desc": "End-to-end engineering of scalable web and mobile applications using modern stacks like React, Vue, Nextjs, Nodejs, Laravel, and Flutter. Data science projects leveraging Python, Pandas, NLP, and machine learning for actionable insights.",
+      "icon": "code",
+      "color": "indigo"
+    },
+    {
+      "title": "Technical & Career Mentoring",
+      "desc": "One-to-one guidance on full-stack development, data science, career transitions, and excelling in technical interviews.",
+      "icon": "mentor",
+      "color": "amber"
+    },
+    {
+      "title": "STEM Tutoring & Coaching",
+      "desc": "In-depth academic support for STEM subjects, simplifying complex concepts in Mathematics, Physics, and Computer Science.",
+      "icon": "book",
+      "color": "emerald"
+    },
+    {
+      "title": "Holistic & Leadership Growth",
+      "desc": "Mentorship on discipline, purpose, and spiritual growth, integrating Vedic wisdom into modern lifestyle for clarity and focus.",
+      "icon": "spark",
+      "color": "violet"
+    }
+  ],
+  "clients": [
+    {
+      "name": "Bootwal R&D",
+      "logo": "assets/images/clients/bootwal-logo.png",
+      "url": "https://www.bootwal.com/"
+    },
+    {
+      "name": "Aval Consulting Group",
+      "logo": "assets/images/clients/aval-logo.png",
+      "url": "https://www.aval-group.co.uk/"
+    },
+    {
+      "name": "Dzango",
+      "logo": "assets/images/clients/dzango-logo.png",
+      "url": "https://dzango.com/"
+    },
+    {
+      "name": "Nepathya College",
+      "logo": "assets/images/clients/nepathya-logo.png",
+      "url": "https://nepathyacollege.edu.np/"
+    },
+    {
+      "name": "Wenow",
+      "logo": "assets/images/clients/wenow-logo.jpeg",
+      "url": "https://www.wenow.com/en/home/"
+    },
+    {
+      "name": "ISKCON Nepal",
+      "logo": "assets/images/clients/iskcon-nepal.jpg",
+      "url": "https://iskconnepal.org/"
+    },
+    {
+      "name": "Tilottama Gaushala",
+      "logo": "assets/images/clients/tilottama-gaushala-logo.jpeg",
+      "url": "https://tilottamagaushala.org.np//"
+    }
   ]
 }

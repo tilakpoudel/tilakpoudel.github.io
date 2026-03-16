@@ -526,6 +526,9 @@
           <a href="#wisdom"
             class="text-sm text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
             role="listitem">Wisdom</a>
+          <a href="#offerings"
+            class="text-sm text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            role="listitem">Offerings</a>
           <a href="#contact"
             class="text-sm text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
             role="listitem">Contact</a>
@@ -569,6 +572,8 @@
           class="text-slate-700 dark:text-slate-300 py-2 border-b border-slate-100 dark:border-slate-800">Writing</a>
         <a href="#wisdom"
           class="text-slate-700 dark:text-slate-300 py-2 border-b border-slate-100 dark:border-slate-800">Wisdom</a>
+        <a href="#offerings"
+          class="text-slate-700 dark:text-slate-300 py-2 border-b border-slate-100 dark:border-slate-800">Offerings</a>
         <a href="#contact" class="text-slate-700 dark:text-slate-300 py-2">Contact</a>
       </div>
     </div>
@@ -1734,6 +1739,55 @@
 
       <div id="recommendations-container" class="grid md:grid-cols-3 gap-8">
         <!-- Dynamically rendered -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       OFFERINGS (EXPERTISE & GUIDANCE)
+  ═══════════════════════════════════════════════════════ -->
+  <section id="offerings" class="py-24" aria-label="Offerings">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-16 reveal">
+        <span class="code-tag mb-3 inline-block">expertise & guidance</span>
+        <h2 class="font-display text-4xl font-semibold text-slate-900 dark:text-white mb-4">Professional Offerings</h2>
+        <p class="text-slate-600 dark:text-slate-400">Technical solutions, educational support, and personal growth
+          mentorship.</p>
+      </div>
+
+      <div id="offerings-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Dynamically rendered -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CLIENTS & COLLABORATORS (SLIDER)
+  ═══════════════════════════════════════════════════════ -->
+  <section id="collaborators"
+    class="py-20 border-y border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/20 overflow-hidden"
+    aria-label="Collaborators">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 mb-12">
+      <div class="text-center reveal">
+        <span class="code-tag mb-3 inline-block">trusted by</span>
+        <h2 class="font-display text-3xl font-semibold text-slate-900 dark:text-white mb-4">Partners & Collaborators
+        </h2>
+      </div>
+    </div>
+
+    <div class="relative">
+      <!-- Gradient masks for the slider -->
+      <div
+        class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white dark:from-[#0a0a15] to-transparent z-10 pointer-events-none">
+      </div>
+      <div
+        class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white dark:from-[#0a0a15] to-transparent z-10 pointer-events-none">
+      </div>
+
+      <div class="logo-slider">
+        <div id="clients-rail" class="logo-rail">
+          <!-- Dynamically rendered -->
+        </div>
       </div>
     </div>
   </section>
