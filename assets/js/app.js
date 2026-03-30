@@ -161,27 +161,30 @@
         </li>`).join('');
       const chips = job.chips.map(c => `<span class="chip">${c}</span>`).join('');
 
-      // On desktop: alternating left/right. On mobile: all same side.
       return `
-        <div class="relative flex flex-col md:flex-row gap-6 mb-10 reveal" style="transition-delay:${i*0.12}s">
+        <div class="relative flex flex-row md:flex-row gap-0 md:gap-6 mb-12 reveal" style="transition-delay:${i*0.12}s">
+          <!-- Desktop Side Text (Empty on Mobile) -->
           <div class="hidden md:block md:w-1/2 ${side === 'left' ? 'pr-10 text-right order-1' : 'pl-10 text-left order-3'}">
             <span class="text-xs font-mono text-amber-600 dark:text-amber-400 font-semibold">${job.period}</span>
             <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white mt-0.5">${job.title}</h3>
             <p class="text-sm font-medium" style="color:${dot}">${job.company}</p>
           </div>
 
-          <div class="flex-shrink-0 md:absolute md:left-1/2 md:-ml-3.5 z-10 order-2 self-start mt-1">
+          <!-- Dot / Indicator -->
+          <div class="flex-shrink-0 z-20 order-1 md:absolute md:left-1/2 md:-ml-3.5 mt-1.5 ml-[2px] md:ml-0">
             <div class="w-7 h-7 rounded-full bg-white dark:bg-slate-900 border-2 flex items-center justify-center shadow-lg" style="border-color:${dot}">
               <div class="w-2.5 h-2.5 rounded-full" style="background:${dot}"></div>
             </div>
           </div>
 
-          <div class="md:w-1/2 ${side === 'left' ? 'pl-2 md:pl-10 ml-8 md:ml-0 order-3' : 'pr-2 md:pr-10 ml-8 md:ml-0 order-1'} md:order-none">
+          <!-- Card Content -->
+          <div class="flex-grow md:w-1/2 order-2 ${side === 'left' ? 'md:order-3 md:pl-10' : 'md:order-1 md:pr-10'} ml-8 md:ml-0">
             <div class="md:hidden mb-2">
-              <span class="text-xs font-mono text-amber-600 dark:text-amber-400">${job.period}</span>
-              <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">${job.title} — ${job.company}</h3>
+              <span class="text-xs font-mono text-amber-600 dark:text-amber-400 font-semibold">${job.period}</span>
+              <h3 class="font-display text-lg font-semibold text-slate-900 dark:text-white">${job.title}</h3>
+              <p class="text-sm font-medium" style="color:${dot}">${job.company}</p>
             </div>
-            <div class="card-lifted rounded-xl p-5">
+            <div class="card-lifted rounded-xl p-5 hover:shadow-xl transition-shadow duration-300">
               <ul class="space-y-2">${ach}</ul>
               <div class="flex flex-wrap gap-1.5 mt-4">${chips}</div>
             </div>
@@ -303,16 +306,21 @@
     if (!el) return;
 
     el.innerHTML = articles.map((a, i) => `
-      <a href="https://medium.com/@tilakpoudel" target="_blank" rel="noopener"
-         class="card p-5 group block reveal" style="transition-delay:${i*0.08}s" aria-label="Read article: ${a.title}">
+      <div class="card p-5 group reveal h-full flex flex-col" style="transition-delay:${i*0.08}s">
         <div class="mb-3"><span class="chip">${a.tag}</span></div>
-        <h3 class="font-display text-base font-semibold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors mb-2">${a.title}</h3>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">${a.summary}</p>
-        <div class="flex items-center gap-1.5 text-xs text-indigo-600 dark:text-indigo-400 font-medium">
-          Read on Medium
-          <svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <h3 class="font-display text-base font-semibold text-slate-900 dark:text-white transition-colors mb-2">${a.title}</h3>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed flex-grow">${a.summary}</p>
+        <div class="mt-auto">
+          <a href="https://medium.com/@tilakpoudel" target="_blank" rel="noopener" 
+             class="inline-flex items-center gap-1.5 text-xs text-indigo-600 dark:text-indigo-400 font-medium hover:text-amber-600 dark:hover:text-amber-400 transition-colors group/link" 
+             aria-label="Read article: ${a.title}">
+            Read on Medium
+            <svg class="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7M3 12h18"/>
+            </svg>
+          </a>
         </div>
-      </a>
+      </div>
     `).join('');
   }
 
@@ -377,15 +385,22 @@
       const displayContent  = needsTruncation ? r.text.slice(0, 200) + '...' : r.text;
       
       return `
-        <div class="rec-card glow-card indigo p-6 reveal h-full flex flex-col" style="transition-delay:${i * 0.1}s">
-          <div class="flex items-center gap-4 mb-5">
-            <a href="${r.url || '#'}" target="_blank" rel="noopener" class="w-12 h-12 rounded-full overflow-hidden border-2 border-indigo-100 dark:border-indigo-900/50 flex-shrink-0 hover:opacity-80 transition-opacity">
-              <img src="${r.avatar}" alt="${r.name}" class="w-full h-full object-cover">
-            </a>
-            <div>
-              <a href="${r.url || '#'}" target="_blank" rel="noopener" class="font-display font-semibold text-slate-900 dark:text-white text-sm hover:text-indigo-600 transition-colors">${r.name}</a>
-              <p class="text-[10px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-mono">${r.position}</p>
+        <div class="rec-card glow-card indigo p-6 reveal h-full flex flex-col group/rec" style="transition-delay:${i * 0.1}s">
+          <div class="flex items-center justify-between mb-5">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-indigo-100 dark:border-indigo-900/50 flex-shrink-0">
+                <img src="${r.avatar}" alt="${r.name}" class="w-full h-full object-cover">
+              </div>
+              <div>
+                <h4 class="font-display font-semibold text-slate-900 dark:text-white text-sm">${r.name}</h4>
+                <p class="text-[10px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-mono">${r.position}</p>
+              </div>
             </div>
+            ${r.url ? `
+              <a href="${r.url}" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950/30 transition-all shadow-sm" title="View LinkedIn Profile">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            ` : ''}
           </div>
           <div class="relative flex-grow flex flex-col justify-between">
             <svg class="absolute -top-2 -left-2 w-8 h-8 text-indigo-500/10" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true">
@@ -449,9 +464,14 @@
     const doubled = [...clients, ...clients];
     
     rail.innerHTML = doubled.map(c => `
-      <a href="${c.url || '#'}" target="_blank" rel="noopener" class="logo-item" title="${c.name}">
+      <div class="logo-item group/logo" title="${c.name}">
         <img src="${c.logo}" alt="${c.name} logo" class="max-h-16 transition-all">
-      </a>
+        ${c.url ? `
+          <a href="${c.url}" target="_blank" rel="noopener" class="absolute top-2 right-2 w-7 h-7 rounded-full bg-white/90 dark:bg-slate-800/90 flex items-center justify-center text-slate-400 opacity-0 group-hover/logo:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all shadow-sm z-10" title="Visit Website">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        ` : ''}
+      </div>
     `).join('');
   }
 
