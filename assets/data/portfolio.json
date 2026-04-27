@@ -17,7 +17,7 @@
   },
   "stats": [
     {
-      "value": "7+",
+      "value": "8+",
       "label": "Years Engineering",
       "color": "indigo"
     },
@@ -127,8 +127,12 @@
           "level": 85
         },
         {
-          "name": "Flutter",
-          "level": 70
+          "name": "TypeScript",
+          "level": 88
+        },
+        {
+          "name": "Flutter / Streamlit",
+          "level": 75
         }
       ],
       "chips": [
@@ -154,7 +158,8 @@
       "chips": [
         "REST APIs",
         "GraphQL",
-        "mTLS"
+        "mTLS",
+        "Prisma"
       ]
     },
     {
@@ -174,7 +179,8 @@
       "chips": [
         "NumPy",
         "Matplotlib",
-        "NLP"
+        "FCM Clustering",
+        "RFM Analysis"
       ]
     },
     {
@@ -199,6 +205,25 @@
     }
   ],
   "experience": [
+    {
+      "title": "Full Stack Developer (Freelance)",
+      "company": "Aval Consulting Group (UK Client)",
+      "period": "Feb 2026 – Apr 2026",
+      "color": "emerald",
+      "achievements": [
+        "Orchestrated full project lifecycle for a Civil Survey Management System from requirement gathering to production deployment",
+        "Integrated <strong>Google Gemini AI</strong> for automated report synthesis and professional text generation",
+        "Engineered a normalized <strong>PostgreSQL</strong> schema with <strong>Prisma ORM</strong> and migrated legacy data",
+        "Implemented a scalable <strong>Repository Pattern</strong> in Node.js/Express with TypeScript for better maintainability"
+      ],
+      "chips": [
+        "Node.js",
+        "TypeScript",
+        "Prisma",
+        "PostgreSQL",
+        "Gemini AI"
+      ]
+    },
     {
       "title": "Software Engineer",
       "company": "DzangoLab",
@@ -275,7 +300,7 @@
       "sub": "Senior Engineer",
       "icon": "flask",
       "color": "indigo",
-      "active": true
+      "active": false
     },
     {
       "year": "2025",
@@ -284,6 +309,14 @@
       "icon": "chart",
       "color": "amber",
       "active": false
+    },
+    {
+      "year": "2026",
+      "title": "AI & Engineering",
+      "sub": "Freelance UK Projects",
+      "icon": "spark",
+      "color": "emerald",
+      "active": true
     },
     {
       "year": "∞",
@@ -296,6 +329,24 @@
     }
   ],
   "projects": [
+    {
+      "title": "Customer Segmentation via Fuzzy Clustering",
+      "category": "ML · Streamlit",
+      "color": "amber",
+      "problem": "Traditional hard clustering (K-Means) fails to capture the nuanced overlapping behaviors of customers in marketing datasets.",
+      "approach": "Applied <strong>Fuzzy C-Means (FCM)</strong> and RFM analysis on a Streamlit dashboard, enabling soft-assignment of customers to multiple segments.",
+      "impact": "Optimized marketing precision via soft clustering",
+      "impactColor": "emerald",
+      "chips": [
+        "Python",
+        "Streamlit",
+        "Scikit-learn",
+        "FCM",
+        "RFM Analysis"
+      ],
+      "github": "https://github.com/tilakpoudel/customer-segmentation",
+      "url": "https://customer-segmentation-fuzzy.streamlit.app/"
+    },
     {
       "title": "COVID Sentiment Analysis",
       "category": "NLP · Research",
@@ -346,6 +397,12 @@
     }
   ],
   "articles": [
+    {
+      "title": "Beyond K-Means: Why Your Business Needs 'Soft' Customer Segmentation",
+      "tag": "Data Science · Medium",
+      "summary": "Exploring the technical and business advantages of using Fuzzy C-Means clustering over traditional K-Means for more nuanced customer insights.",
+      "url": "https://tilakpoudel.medium.com/beyond-k-means-why-your-business-needs-soft-customer-segmentation-20e1251fc4c7"
+    },
     {
       "title": "Advanced SQL Optimization Patterns",
       "tag": "SQL · Database",
@@ -464,24 +521,24 @@
   ],
   "networkNodeDetails": {
     "Backend Engineering": {
-      "desc": "Laravel, Node.js, REST APIs, GraphQL, mTLS authentication, microservices architecture.",
+      "desc": "Laravel, Node.js, TypeScript, REST APIs, GraphQL, mTLS, Prisma ORM, microservices architecture.",
       "skills": [
         "Laravel",
         "Node.js",
-        "REST API",
-        "GraphQL",
+        "TypeScript",
+        "Prisma",
         "mTLS",
         "PHP"
       ]
     },
     "Data Science": {
-      "desc": "Python, Pandas, NumPy, NLP pipelines, sentiment analysis, social network analysis, EDA.",
+      "desc": "Python, Pandas, Streamlit, Fuzzy C-Means, RFM Analysis, NLP pipelines, EDA.",
       "skills": [
         "Python",
         "Pandas",
-        "NumPy",
-        "NLTK",
-        "Sklearn",
+        "Streamlit",
+        "Scikit-learn",
+        "FCM",
         "NLP"
       ]
     },
