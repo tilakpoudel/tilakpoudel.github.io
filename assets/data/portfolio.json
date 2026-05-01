@@ -233,7 +233,8 @@
         "Improved database query performance by <strong>30%</strong> through advanced indexing and optimization",
         "Implemented secure <strong>mTLS authentication</strong> across microservices architecture",
         "Built Docker-based CI/CD pipeline reducing deployment downtime by <strong>40%</strong>",
-        "Led feature flag architecture enabling safe, iterative feature releases"
+        "Led feature flag architecture enabling safe, iterative feature releases",
+        "Delivered data analytics solutions for carbon footprint tracking (Wenow), building dashboards and ex-tracting insights to drive sustainability-focused business decisions."
       ],
       "chips": [
         "Laravel",
