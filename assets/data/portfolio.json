@@ -206,6 +206,27 @@
   ],
   "experience": [
     {
+      "title": "Workshop Facilitator: ML-Powered Web Application Development",
+      "company": "Sahid Smarak College Kritipur",
+      "period": "June 2026",
+      "color": "amber",
+      "achievements": [
+        "Designed and delivered 7-day intensive workshop covering Python fundamentals, ML implementation, and web application development",
+        "Trained 20+ students on building ML-powered systems using Python, Pandas, Scikit-learn, and Flask",
+        "Guided participants to achieve 85%+ model accuracy (R²) on Student Performance Prediction System projects",
+        "Implemented hands-on methodology: 70% coding | 20% guided explanation | 10% theory for transformative learning outcomes"
+      ],
+      "chips": [
+        "Python",
+        "Pandas",
+        "NumPy",
+        "Scikit-learn",
+        "Flask",
+        "Git",
+        "Render"
+      ]
+    },
+    {
       "title": "Full Stack Developer (Freelance)",
       "company": "Aval Consulting Group (UK Client)",
       "period": "Feb 2026 – Apr 2026",
@@ -399,6 +420,12 @@
   ],
   "articles": [
     {
+      "title": "Building ML-Powered Web Applications: From Theory to Deployment",
+      "tag": "Machine Learning · Workshop",
+      "summary": "Insights from a 7-day intensive workshop on building intelligent web applications. Covering Python fundamentals, ML implementation with Scikit-learn, and Flask deployment. Achieved 85%+ model accuracy with 20+ students on real-world Student Performance Prediction projects. Methodology: 70% hands-on coding | 20% guided explanation | 10% theory.",
+      "url": "https://www.linkedin.com/posts/tilak-poudel-654742159_machinelearning-python-datascience-ugcPost-7474007162306916353-N6R_/?utm_source=share&utm_medium=member_desktop"
+    },
+    {
       "title": "Beyond K-Means: Why Your Business Needs 'Soft' Customer Segmentation",
       "tag": "Data Science · Medium",
       "summary": "Exploring the technical and business advantages of using Fuzzy C-Means clustering over traditional K-Means for more nuanced customer insights.",
@@ -584,6 +611,13 @@
     }
   },
   "recommendations": [
+    {
+      "name": "Rohan Man Shakya",
+      "position": "Django Enthusiast | Full Stack Web Development | Python | JavaScript | PHP | Java | SQL",
+      "text": "I had the privilege of learning from Tilak Poudel during a week-long AI/ML and Flask with Python bootcamp organized by our college. Throughout the program, Tilak demonstrated exceptional technical expertise and a remarkable ability to explain complex concepts in a clear and practical manner. His sessions on Artificial Intelligence, Machine Learning, and Flask development were highly engaging, well-structured, and focused on real-world applications. What stood out most was his patience in addressing questions and his dedication to ensuring that every participant understood the concepts being taught. Tilak's passion for teaching, strong technical knowledge, and approachable mentoring style created an excellent learning environment. The knowledge and practical insights I gained from his mentorship have significantly strengthened my understanding of AI/ML and Python web development. I highly recommend Tilak Poudel as a mentor, trainer, and technology professional. Any student or organization would greatly benefit from his expertise and commitment to knowledge sharing.",
+      "avatar": "assets/images/recommender/rohan-man-shakya.jpeg",
+      "url": "https://www.linkedin.com/in/rohanmanshakya/"
+    },
     {
       "name": "Richard Seltrecht",
       "position": "Lead iOS and Android Software Manager | Wenow | France",

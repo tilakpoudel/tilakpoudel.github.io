@@ -305,23 +305,28 @@
     const el = document.getElementById('articles-grid');
     if (!el) return;
 
-    el.innerHTML = articles.map((a, i) => `
+    el.innerHTML = articles.map((a, i) => {
+      const articleUrl = a.url || 'https://medium.com/@tilakpoudel';
+      const isMedium = articleUrl === 'https://medium.com/@tilakpoudel';
+      const linkText = isMedium ? 'Read on Medium' : 'Read Article';
+      return `
       <div class="card p-5 group reveal h-full flex flex-col" style="transition-delay:${i*0.08}s">
         <div class="mb-3"><span class="chip">${a.tag}</span></div>
         <h3 class="font-display text-base font-semibold text-slate-900 dark:text-white transition-colors mb-2">${a.title}</h3>
         <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed flex-grow">${a.summary}</p>
         <div class="mt-auto">
-          <a href="https://medium.com/@tilakpoudel" target="_blank" rel="noopener" 
+          <a href="${articleUrl}" target="_blank" rel="noopener" 
              class="inline-flex items-center gap-1.5 text-xs text-indigo-600 dark:text-indigo-400 font-medium hover:text-amber-600 dark:hover:text-amber-400 transition-colors group/link" 
              aria-label="Read article: ${a.title}">
-            Read on Medium
+            ${linkText}
             <svg class="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7M3 12h18"/>
             </svg>
           </a>
         </div>
       </div>
-    `).join('');
+    `;
+    }).join('');
   }
 
   /* ── Courses ────────────────────────────────────────── */
