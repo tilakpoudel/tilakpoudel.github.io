@@ -79,10 +79,10 @@
     const el = document.getElementById('stats-grid');
     if (!el) return;
     const colorMap = {
-      indigo:  'text-indigo-600 dark:text-indigo-400',
-      amber:   'text-amber-600 dark:text-amber-400',
+      indigo: 'text-indigo-600 dark:text-indigo-400',
+      amber: 'text-amber-600 dark:text-amber-400',
       emerald: 'text-emerald-600 dark:text-emerald-400',
-      violet:  'text-violet-600 dark:text-violet-400',
+      violet: 'text-violet-600 dark:text-violet-400',
     };
     el.innerHTML = stats.map((s, i) => `
       <div class="stat-card glow-card ${s.color} p-5 text-center reveal" style="transition-delay:${i * 0.08}s">
@@ -99,16 +99,16 @@
 
     const iconMap = {
       monitor: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2"/>`,
-      server:  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"/>`,
-      chart:   `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>`,
-      layers:  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>`,
+      server: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"/>`,
+      chart: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>`,
+      layers: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>`,
     };
 
     const colorAccent = {
-      indigo:  { text: 'text-indigo-600 dark:text-indigo-400',  bg: 'bg-indigo-100 dark:bg-indigo-900/40', grad: 'from-indigo-500 to-indigo-400'  },
+      indigo: { text: 'text-indigo-600 dark:text-indigo-400', bg: 'bg-indigo-100 dark:bg-indigo-900/40', grad: 'from-indigo-500 to-indigo-400' },
       emerald: { text: 'text-emerald-600 dark:text-emerald-400', bg: 'bg-emerald-100 dark:bg-emerald-900/40', grad: 'from-emerald-500 to-emerald-400' },
-      amber:   { text: 'text-amber-600 dark:text-amber-400',    bg: 'bg-amber-100 dark:bg-amber-900/40',   grad: 'from-amber-500 to-amber-400'    },
-      violet:  { text: 'text-violet-600 dark:text-violet-400',  bg: 'bg-violet-100 dark:bg-violet-900/40', grad: 'from-violet-500 to-violet-400'  },
+      amber: { text: 'text-amber-600 dark:text-amber-400', bg: 'bg-amber-100 dark:bg-amber-900/40', grad: 'from-amber-500 to-amber-400' },
+      violet: { text: 'text-violet-600 dark:text-violet-400', bg: 'bg-violet-100 dark:bg-violet-900/40', grad: 'from-violet-500 to-violet-400' },
     };
 
     el.innerHTML = skills.map((s, gi) => {
@@ -128,7 +128,7 @@
       const chips = s.chips.map(ch => `<span class="chip">${ch}</span>`).join('');
 
       return `
-        <div class="card p-6 reveal" style="transition-delay:${gi*0.1}s" data-skill-group>
+        <div class="card p-6 reveal" style="transition-delay:${gi * 0.1}s" data-skill-group>
           <div class="flex items-center gap-3 mb-5">
             <div class="w-9 h-9 rounded-xl ${c.bg} flex items-center justify-center flex-shrink-0">
               <svg class="w-5 h-5 ${c.text}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -152,9 +152,9 @@
     const colorDot = { indigo: '#6366f1', amber: '#f59e0b', emerald: '#10b981' };
 
     el.innerHTML = exp.map((job, i) => {
-      const dot  = colorDot[job.color] || colorDot.indigo;
+      const dot = colorDot[job.color] || colorDot.indigo;
       const side = i % 2 === 0 ? 'left' : 'right';
-      const ach  = job.achievements.map(a => `
+      const ach = job.achievements.map(a => `
         <li class="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400">
           <span class="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0" style="background:${dot}"></span>
           <span>${a}</span>
@@ -162,7 +162,7 @@
       const chips = job.chips.map(c => `<span class="chip">${c}</span>`).join('');
 
       return `
-        <div class="relative flex flex-row md:flex-row gap-0 md:gap-6 mb-12 reveal" style="transition-delay:${i*0.12}s">
+        <div class="relative flex flex-row md:flex-row gap-0 md:gap-6 mb-12 reveal" style="transition-delay:${i * 0.12}s">
           <!-- Desktop Side Text (Empty on Mobile) -->
           <div class="hidden md:block md:w-1/2 ${side === 'left' ? 'pr-10 text-right order-1' : 'pl-10 text-left order-3'}">
             <span class="text-xs font-mono text-amber-600 dark:text-amber-400 font-semibold">${job.period}</span>
@@ -200,28 +200,28 @@
     if (!el) return;
 
     const iconPaths = {
-      book:  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>`,
-      code:  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>`,
+      book: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>`,
+      code: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>`,
       flask: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>`,
       chart: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>`,
       spark: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>`,
     };
 
     const bgMap = {
-      indigo:  'from-indigo-50 to-indigo-100/50 dark:from-indigo-900/40 dark:to-indigo-950/20 border-indigo-200 dark:border-indigo-700',
+      indigo: 'from-indigo-50 to-indigo-100/50 dark:from-indigo-900/40 dark:to-indigo-950/20 border-indigo-200 dark:border-indigo-700',
       emerald: 'from-emerald-50 to-emerald-100/50 dark:from-emerald-900/40 dark:to-emerald-950/20 border-emerald-200 dark:border-emerald-700',
-      amber:   'from-amber-50 to-amber-100/50 dark:from-amber-900/40 dark:to-amber-950/20 border-amber-200 dark:border-amber-700',
-      violet:  'from-violet-50 to-violet-100/50 dark:from-violet-900/40 dark:to-violet-950/20 border-violet-200 dark:border-violet-700',
+      amber: 'from-amber-50 to-amber-100/50 dark:from-amber-900/40 dark:to-amber-950/20 border-amber-200 dark:border-amber-700',
+      violet: 'from-violet-50 to-violet-100/50 dark:from-violet-900/40 dark:to-violet-950/20 border-violet-200 dark:border-violet-700',
     };
     const textMap = {
       indigo: 'text-indigo-600 dark:text-indigo-400',
-      emerald:'text-emerald-600 dark:text-emerald-400',
-      amber:  'text-amber-600 dark:text-amber-400',
+      emerald: 'text-emerald-600 dark:text-emerald-400',
+      amber: 'text-amber-600 dark:text-amber-400',
       violet: 'text-violet-600 dark:text-violet-400',
     };
 
     el.innerHTML = journey.map((j, i) => `
-      <div class="journey-item text-center reveal ${j.year === '∞' ? 'col-span-2 md:col-span-1' : ''}" style="transition-delay:${i*0.1}s">
+      <div class="journey-item text-center reveal ${j.year === '∞' ? 'col-span-2 md:col-span-1' : ''}" style="transition-delay:${i * 0.1}s">
         <div class="w-16 h-16 mx-auto rounded-2xl bg-gradient-to-br ${bgMap[j.color]} border flex items-center justify-center mb-3 shadow-md ${j.active ? 'pulse-glow' : ''} ${j.future ? 'border-dashed' : ''}">
           <svg class="w-7 h-7 ${textMap[j.color]}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             ${iconPaths[j.icon] || iconPaths.spark}
@@ -240,27 +240,27 @@
     if (!el) return;
 
     const topColors = {
-      indigo:  'from-indigo-500 to-violet-500',
-      amber:   'from-amber-400 to-orange-400',
+      indigo: 'from-indigo-500 to-violet-500',
+      amber: 'from-amber-400 to-orange-400',
       emerald: 'from-emerald-500 to-teal-400',
     };
     const iconColors = {
-      indigo:  'bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400',
-      amber:   'bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400',
+      indigo: 'bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400',
+      amber: 'bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400',
       emerald: 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400',
     };
     const tagColors = {
-      indigo:  'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400',
-      amber:   'bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400',
+      indigo: 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400',
+      amber: 'bg-amber-50 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400',
       emerald: 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400',
     };
     const impactColors = {
       emerald: 'text-emerald-600 dark:text-emerald-400',
-      amber:   'text-amber-600 dark:text-amber-400',
+      amber: 'text-amber-600 dark:text-amber-400',
     };
 
     el.innerHTML = projects.map((p, i) => `
-      <div class="project-card card rounded-2xl overflow-hidden reveal group" style="transition-delay:${i*0.1}s">
+      <div class="project-card card rounded-2xl overflow-hidden reveal group" style="transition-delay:${i * 0.1}s">
         <div class="h-1.5 bg-gradient-to-r ${topColors[p.color] || topColors.indigo}"></div>
         <div class="p-6">
           <div class="flex items-start justify-between mb-4">
@@ -310,7 +310,7 @@
       const isMedium = articleUrl === 'https://medium.com/@tilakpoudel';
       const linkText = isMedium ? 'Read on Medium' : 'Read Article';
       return `
-      <div class="card p-5 group reveal h-full flex flex-col" style="transition-delay:${i*0.08}s">
+      <div class="card p-5 group reveal h-full flex flex-col" style="transition-delay:${i * 0.08}s">
         <div class="mb-3"><span class="chip">${a.tag}</span></div>
         <h3 class="font-display text-base font-semibold text-slate-900 dark:text-white transition-colors mb-2">${a.title}</h3>
         <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 leading-relaxed flex-grow">${a.summary}</p>
@@ -336,17 +336,17 @@
 
     const iconMap = {
       spark: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>`,
-      db:    `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>`,
-      code:  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>`,
+      db: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>`,
+      code: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>`,
     };
     const bgMap = {
-      indigo:  'bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400',
-      amber:   'bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400',
+      indigo: 'bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400',
+      amber: 'bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400',
       emerald: 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400',
     };
 
     el.innerHTML = courses.map((c, i) => `
-      <div class="card-lifted rounded-xl p-5 flex items-start gap-4 reveal" style="transition-delay:${i*0.1}s">
+      <div class="card-lifted rounded-xl p-5 flex items-start gap-4 reveal" style="transition-delay:${i * 0.1}s">
         <div class="w-10 h-10 rounded-xl ${bgMap[c.color]} flex items-center justify-center flex-shrink-0">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">${iconMap[c.icon] || iconMap.spark}</svg>
         </div>
@@ -365,20 +365,20 @@
     el.innerHTML = service.topics.map(t => `<span class="chip amber">${t}</span>`).join('');
 
     const seminarsEl = document.getElementById('service-seminars');
-    const engagedEl  = document.getElementById('service-engaged');
+    const engagedEl = document.getElementById('service-engaged');
     if (seminarsEl) seminarsEl.textContent = service.seminars;
-    if (engagedEl)  engagedEl.textContent  = service.engaged;
+    if (engagedEl) engagedEl.textContent = service.engaged;
   }
 
   /* ── Initial wisdom ─────────────────────────────────── */
   function setInitialWisdom(w) {
     if (!w) return;
-    const san   = document.getElementById('wisdom-sanskrit');
+    const san = document.getElementById('wisdom-sanskrit');
     const trans = document.getElementById('wisdom-translation');
-    const src   = document.getElementById('wisdom-source');
-    if (san)   san.textContent   = '"' + w.sanskrit + '"';
+    const src = document.getElementById('wisdom-source');
+    if (san) san.textContent = '"' + w.sanskrit + '"';
     if (trans) trans.textContent = w.translation;
-    if (src)   src.textContent   = '— ' + w.source;
+    if (src) src.textContent = '— ' + w.source;
   }
   /* ── Recommendations ────────────────────────────────── */
   function renderRecommendations(recs) {
@@ -387,8 +387,8 @@
 
     el.innerHTML = recs.map((r, i) => {
       const needsTruncation = r.text.length > 100;
-      const displayContent  = needsTruncation ? r.text.slice(0, 200) + '...' : r.text;
-      
+      const displayContent = needsTruncation ? r.text.slice(0, 200) + '...' : r.text;
+
       return `
         <div class="rec-card glow-card indigo p-6 reveal h-full flex flex-col group/rec" style="transition-delay:${i * 0.1}s">
           <div class="flex items-center justify-between mb-5">
@@ -432,17 +432,17 @@
     if (!el || !offerings) return;
 
     const iconPaths = {
-      code:   `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>`,
+      code: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>`,
       mentor: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>`,
-      book:   `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>`,
-      spark:  `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>`,
+      book: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>`,
+      spark: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>`,
     };
 
     const colorMap = {
-      indigo:  'from-indigo-500 to-indigo-600 shadow-indigo-200 dark:shadow-indigo-900/20',
-      amber:   'from-amber-400 to-amber-500 shadow-amber-200 dark:shadow-amber-900/20',
+      indigo: 'from-indigo-500 to-indigo-600 shadow-indigo-200 dark:shadow-indigo-900/20',
+      amber: 'from-amber-400 to-amber-500 shadow-amber-200 dark:shadow-amber-900/20',
       emerald: 'from-emerald-400 to-emerald-500 shadow-emerald-200 dark:shadow-emerald-900/20',
-      violet:  'from-violet-500 to-violet-600 shadow-violet-200 dark:shadow-violet-900/20',
+      violet: 'from-violet-500 to-violet-600 shadow-violet-200 dark:shadow-violet-900/20',
     };
 
     el.innerHTML = offerings.map((o, i) => `
@@ -467,7 +467,7 @@
 
     // Double the items for seamless loop
     const doubled = [...clients, ...clients];
-    
+
     rail.innerHTML = doubled.map(c => `
       <div class="logo-item group/logo" title="${c.name}">
         <img src="${c.logo}" alt="${c.name} logo" class="max-h-16 transition-all">
