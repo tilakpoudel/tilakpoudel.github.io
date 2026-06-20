@@ -8,7 +8,7 @@ const UI = (() => {
   let isDark = false;
 
   function initDarkMode() {
-    const saved  = localStorage.getItem('theme');
+    const saved = localStorage.getItem('theme');
     const prefer = window.matchMedia('(prefers-color-scheme: dark)').matches;
     isDark = saved ? saved === 'dark' : prefer;
     applyDark(isDark);
@@ -22,7 +22,7 @@ const UI = (() => {
 
   function applyDark(dark) {
     document.documentElement.classList.toggle('dark', dark);
-    const sun  = document.getElementById('sun-icon');
+    const sun = document.getElementById('sun-icon');
     const moon = document.getElementById('moon-icon');
     sun?.classList.toggle('hidden', !dark);
     moon?.classList.toggle('hidden', dark);
@@ -81,7 +81,7 @@ const UI = (() => {
 
   /* ── Mobile Nav ─────────────────────────────────────── */
   function initMobileNav() {
-    const btn  = document.getElementById('menu-toggle');
+    const btn = document.getElementById('menu-toggle');
     const menu = document.getElementById('mobile-menu');
     if (!btn || !menu) return;
 
@@ -115,9 +115,9 @@ const UI = (() => {
   function initQuoteRotator(quotes) {
     if (!quotes || !quotes.length) return;
     let idx = 0;
-    const textEl   = document.getElementById('rotating-quote');
-    const srcEl    = document.getElementById('quote-source');
-    const transEl  = document.getElementById('quote-translation');
+    const textEl = document.getElementById('rotating-quote');
+    const srcEl = document.getElementById('quote-source');
+    const transEl = document.getElementById('quote-translation');
     if (!textEl) return;
 
     function showQuote(i) {
@@ -126,7 +126,7 @@ const UI = (() => {
 
       setTimeout(() => {
         if (textEl) textEl.textContent = q.text;
-        if (srcEl)  srcEl.textContent  = '— ' + q.source;
+        if (srcEl) srcEl.textContent = '— ' + q.source;
         if (transEl && q.translation) {
           transEl.textContent = q.translation;
           transEl.style.display = '';
@@ -157,7 +157,7 @@ const UI = (() => {
   function initWisdomRotator(wisdom) {
     wisdomData = wisdom || [];
     document.getElementById('wisdom-next-btn')?.addEventListener('click', nextWisdom);
-    
+
     // Auto change after 8 seconds
     setInterval(nextWisdom, 8000);
   }
@@ -165,18 +165,18 @@ const UI = (() => {
   function nextWisdom() {
     wisdomIdx = (wisdomIdx + 1) % wisdomData.length;
     const w = wisdomData[wisdomIdx];
-    const san   = document.getElementById('wisdom-sanskrit');
+    const san = document.getElementById('wisdom-sanskrit');
     const trans = document.getElementById('wisdom-translation');
-    const src   = document.getElementById('wisdom-source');
+    const src = document.getElementById('wisdom-source');
 
     [san, trans, src].forEach(el => {
       if (el) { el.style.opacity = 0; el.style.transform = 'translateY(-6px)'; }
     });
 
     setTimeout(() => {
-      if (san)   san.textContent   = '"' + w.sanskrit + '"';
+      if (san) san.textContent = '"' + w.sanskrit + '"';
       if (trans) trans.textContent = w.translation;
-      if (src)   src.textContent   = '— ' + w.source;
+      if (src) src.textContent = '— ' + w.source;
       [san, trans, src].forEach(el => {
         if (el) { el.style.opacity = 1; el.style.transform = 'translateY(0)'; }
       });
@@ -187,11 +187,11 @@ const UI = (() => {
     const el = document.getElementById(`rec-text-${idx}`);
     const btn = el.nextElementSibling;
     if (!el || !btn) return;
-    
+
     const isExpanded = el.classList.toggle('expanded');
-    const fullText  = el.getAttribute('data-full');
+    const fullText = el.getAttribute('data-full');
     const shortText = el.getAttribute('data-short');
-    
+
     el.textContent = isExpanded ? `"${fullText}"` : `"${shortText}"`;
     btn.textContent = isExpanded ? 'Read Less' : 'Read More';
   }
@@ -323,12 +323,12 @@ const UI = (() => {
 
     try {
       // Prepare detailed template parameters
-      const timestamp = new Date().toLocaleString('en-US', { 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric', 
-        hour: '2-digit', 
-        minute: '2-digit', 
+      const timestamp = new Date().toLocaleString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
         second: '2-digit',
         timeZone: 'UTC'
       });
@@ -390,7 +390,7 @@ const UI = (() => {
     ];
 
     const doubled = [...mantras, ...mantras];
-    const inner   = document.createElement('div');
+    const inner = document.createElement('div');
     inner.className = 'mantra-scroll font-mono text-xs text-slate-400 dark:text-slate-600 tracking-widest uppercase';
     inner.innerHTML = doubled.map(m => `<span>✦ ${m}</span>`).join('');
     band.appendChild(inner);
@@ -431,8 +431,8 @@ const UI = (() => {
         const active = currentSection && link.getAttribute('href') === '#' + currentSection;
         link.classList.toggle('nav-link-active', active);
       });
-    }, { 
-      threshold: [0.1, 0.5, 0.8], 
+    }, {
+      threshold: [0.1, 0.5, 0.8],
       rootMargin: '-20% 0px -60% 0px' // Focus on the upper-middle of the screen
     });
 
@@ -472,11 +472,11 @@ const UI = (() => {
 
     setInterval(() => {
       currentIdx = (currentIdx + 1) % images.length;
-      
+
       // Simple cross-fade logic
       img.style.transition = 'opacity 0.8s ease-in-out';
       img.style.opacity = '0.3';
-      
+
       setTimeout(() => {
         img.src = images[currentIdx];
         img.style.opacity = '1';
