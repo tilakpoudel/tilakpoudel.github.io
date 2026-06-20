@@ -231,7 +231,7 @@ const UI = (() => {
       handleSubmit(form);
     });
 
-    ['name', 'email', 'message', 'captcha'].forEach(id => {
+    ['name', 'email', 'phone', 'message', 'captcha'].forEach(id => {
       const el = document.getElementById(id === 'captcha' ? 'captcha-input' : id);
       if (el) {
         el.addEventListener('input', () => clearError(id));
@@ -263,6 +263,16 @@ const UI = (() => {
         return false;
       }
     }
+    if (id === 'phone') {
+      if (!val) {
+        showError('phone', 'Phone number is required');
+        return false;
+      }
+      if (!/^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,9}$/.test(val)) {
+        showError('phone', 'Please enter a valid phone number');
+        return false;
+      }
+    }
     if (id === 'message' && !val) {
       showError('message', 'Message cannot be empty');
       return false;
@@ -290,15 +300,17 @@ const UI = (() => {
 
     const name = document.getElementById('name')?.value.trim();
     const email = document.getElementById('email')?.value.trim();
+    const phone = document.getElementById('phone')?.value.trim();
     const message = document.getElementById('message')?.value.trim();
     const captcha = document.getElementById('captcha-input')?.value.trim();
 
     const isNameValid = validateField('name');
     const isEmailValid = validateField('email');
+    const isPhoneValid = validateField('phone');
     const isMsgValid = validateField('message');
     const isCaptchaValid = validateField('captcha');
 
-    if (!isNameValid || !isEmailValid || !isMsgValid || !isCaptchaValid) return;
+    if (!isNameValid || !isEmailValid || !isPhoneValid || !isMsgValid || !isCaptchaValid) return;
 
     const btn = document.getElementById('send-message');
     const spinner = document.getElementById('loading-spinner');
@@ -310,8 +322,29 @@ const UI = (() => {
     if (btnText) btnText.textContent = 'Sending...';
 
     try {
-      // Use emailjs to send the form
-      const res = await emailjs.sendForm("service_n7uo9m8", "template_7vjbj86", form);
+      // Prepare detailed template parameters
+      const timestamp = new Date().toLocaleString('en-US', { 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit',
+        timeZone: 'UTC'
+      });
+
+      const templateParams = {
+        name: name,
+        email: email,
+        phone: phone,
+        message: message,
+        time: timestamp,
+        subject: `New Contact: ${name}`,
+        contact_details: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nSubmitted: ${timestamp}`
+      };
+
+      // Send email with detailed parameters
+      const res = await emailjs.send("service_n7uo9m8", "template_7vjbj86", templateParams);
 
       if (res.status === 200) {
         form.classList.add('hidden');

@@ -1919,6 +1919,14 @@
               </div>
 
               <div class="space-y-1">
+                <label for="phone"
+                  class="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5">Phone / WhatsApp</label>
+                <input type="tel" id="phone" name="user_phone" placeholder="+1 (555) 123-4567"
+                  class="contact-input w-full px-4 py-2.5 rounded-lg text-sm" required aria-required="true" />
+                <p id="phone-error" class="text-[10px] text-red-500 hidden mt-1 font-mono"></p>
+              </div>
+
+              <div class="space-y-1">
                 <label for="message"
                   class="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1.5">Message</label>
                 <textarea id="message" name="message" rows="4" placeholder="What's on your mind?"
@@ -1964,8 +1972,9 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <p class="font-medium text-slate-900 dark:text-white">Message Sent!</p>
-              <p class="text-sm text-slate-500 mt-1">I'll be in touch soon.</p>
+              <p class="font-medium text-slate-900 dark:text-white">Thank you for reaching out!</p>
+              <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">I truly appreciate you taking the time to connect. I've received your message and will respond to you as soon as possible. Looking forward to our conversation.</p>
+              <p class="text-xs text-slate-500 dark:text-slate-500 mt-3 font-mono">🙏 Hare Krishna</p>
             </div>
           </div>
         </div>
