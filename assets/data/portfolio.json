@@ -224,6 +224,12 @@
         "Flask",
         "Git",
         "Render"
+      ],
+      "certificates-link": [
+        {
+          "label": "View mentoring certificate",
+          "url": "assets/experience-certificates/mentoring-certificate-sahid-smarak-college.jpeg"
+        }
       ]
     },
     {
@@ -243,7 +249,8 @@
         "Prisma",
         "PostgreSQL",
         "Gemini AI"
-      ]
+      ],
+      "certificates-link": []
     },
     {
       "title": "Software Engineer",
@@ -263,6 +270,16 @@
         "Docker",
         "PostgreSQL",
         "mTLS"
+      ],
+      "certificates-link": [
+        {
+          "label": "View employment letter (Eight Bit Pvt. Ltd.)",
+          "url": "assets/experience-certificates/8BitExperienceLetter.jpg"
+        },
+        {
+          "label": "View Wenow recommendation",
+          "url": "assets/experience-certificates/Wenow_Tilak_Poudel-experience.pdf"
+        }
       ]
     },
     {
@@ -285,7 +302,8 @@
         "Node.js",
         "Vue.js",
         "REST API"
-      ]
+      ],
+      "certificates-link": []
     },
     {
       "title": "Lecturer & Trainer",
@@ -301,7 +319,8 @@
         "Algorithms",
         "DBMS",
         "Mentorship"
-      ]
+      ],
+      "certificates-link": []
     }
   ],
   "journey": [

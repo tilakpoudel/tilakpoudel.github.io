@@ -262,6 +262,15 @@
           <span>${a}</span>
         </li>`).join('');
       const chips = job.chips.map(c => `<span class="chip">${c}</span>`).join('');
+      const certificates = (job['certificates-link'] || []).map(certificate => `
+        <a href="${certificate.url}" target="_blank" rel="noopener"
+          class="btn-outline px-3 py-1.5 rounded-lg text-xs font-medium inline-flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M14 3h7v7m-1-6L10 14m-4 1H5a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-1" />
+          </svg>
+          ${certificate.label}
+        </a>`).join('');
 
       return `
         <div class="relative flex flex-row md:flex-row gap-0 md:gap-6 mb-12 reveal" style="transition-delay:${i * 0.12}s">
@@ -289,6 +298,7 @@
             <div class="card-lifted rounded-xl p-5 hover:shadow-xl transition-shadow duration-300">
               <ul class="space-y-2">${ach}</ul>
               <div class="flex flex-wrap gap-1.5 mt-4">${chips}</div>
+              ${certificates ? `<div class="flex flex-wrap gap-2 mt-4">${certificates}</div>` : ''}
             </div>
           </div>
         </div>
