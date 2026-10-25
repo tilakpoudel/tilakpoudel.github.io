@@ -55,7 +55,7 @@
     if (nameEl) nameEl.innerHTML = `<span class="text-slate-900 dark:text-white">${meta.name.split(' ')[0]}</span><br /><span class="gradient-text">${meta.name.split(' ').slice(1).join(' ')}</span>`;
 
     const taglineEl = document.getElementById('hero-tagline');
-    if (taglineEl) taglineEl.textContent = meta.tagline;
+    if (taglineEl) renderHeroTagline(taglineEl, meta.tagline);
 
     // Roles
     const rolesEl = document.getElementById('hero-roles');
@@ -72,6 +72,108 @@
 
     const medLink = document.getElementById('hero-medium');
     if (medLink) medLink.href = meta.medium;
+  }
+
+  function renderHeroTagline(element, tagline) {
+    const highlightPhrases = ['scalable systems', 'intelligent data', 'timeless wisdom'];
+    const matches = highlightPhrases
+      .map(phrase => ({ phrase, index: tagline.indexOf(phrase) }))
+      .filter(match => match.index >= 0)
+      .sort((a, b) => a.index - b.index);
+    const segments = [];
+    let offset = 0;
+
+    matches.forEach(({ phrase, index }) => {
+      if (index < offset) return;
+      if (index > offset) segments.push({ text: tagline.slice(offset, index) });
+      segments.push({ text: phrase, highlighted: true });
+      offset = index + phrase.length;
+    });
+    if (offset < tagline.length) segments.push({ text: tagline.slice(offset) });
+
+    const visual = document.createElement('span');
+    visual.setAttribute('aria-hidden', 'true');
+    const typingTargets = segments.map(segment => {
+      const textNode = document.createTextNode('');
+      if (segment.highlighted) {
+        const highlight = document.createElement('span');
+        highlight.className = 'gradient-text font-medium';
+        highlight.append(textNode);
+        visual.append(highlight);
+      } else {
+        visual.append(textNode);
+      }
+      return { text: segment.text, textNode };
+    });
+
+    element.setAttribute('aria-label', tagline);
+    element.replaceChildren(visual);
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      typingTargets.forEach(({ text, textNode }) => {
+        textNode.nodeValue = text;
+      });
+      return;
+    }
+
+    if (!typingTargets.length) return;
+
+    element.classList.add('hero-tagline-typing');
+    let segmentIndex = 0;
+    let characterIndex = 0;
+    const typeNextCharacter = () => {
+      if (segmentIndex >= typingTargets.length) {
+        window.setTimeout(() => {
+          segmentIndex = typingTargets.length - 1;
+          characterIndex = Array.from(typingTargets[segmentIndex].text).length;
+          eraseNextCharacter();
+        }, 2200);
+        return;
+      }
+
+      const target = typingTargets[segmentIndex];
+      const characters = Array.from(target.text);
+      const character = characters[characterIndex];
+      target.textNode.nodeValue += character;
+      characterIndex += 1;
+
+      if (characterIndex >= characters.length) {
+        segmentIndex += 1;
+        characterIndex = 0;
+      }
+      const delay = /[.,!?;:]/.test(character) ? 320 : character === ' ' ? 95 : 55;
+      window.setTimeout(typeNextCharacter, delay);
+    };
+
+    const eraseNextCharacter = () => {
+      if (segmentIndex < 0) {
+        window.setTimeout(() => {
+          segmentIndex = 0;
+          characterIndex = 0;
+          typeNextCharacter();
+        }, 650);
+        return;
+      }
+
+      const target = typingTargets[segmentIndex];
+      const characters = Array.from(target.text);
+      if (characterIndex === 0) {
+        segmentIndex -= 1;
+        if (segmentIndex >= 0) {
+          characterIndex = Array.from(typingTargets[segmentIndex].text).length;
+        }
+        window.setTimeout(eraseNextCharacter, 55);
+        return;
+      }
+
+      characterIndex -= 1;
+      target.textNode.nodeValue = characters.slice(0, characterIndex).join('');
+      const removedCharacter = characters[characterIndex];
+      const delay = /[.,!?;:]/.test(removedCharacter) ? 120 : 30;
+      window.setTimeout(eraseNextCharacter, delay);
+    };
+
+    typeNextCharacter();
   }
 
   /* ── Stats ──────────────────────────────────────────── */

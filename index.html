@@ -463,6 +463,20 @@
       animation: floatSlow 11s ease-in-out infinite reverse;
     }
 
+    @keyframes taglineCursorBlink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .hero-tagline-typing::after {
+      content: '|';
+      display: inline-block;
+      margin-left: 2px;
+      color: #6366f1;
+      animation: taglineCursorBlink 0.8s steps(1) infinite;
+    }
+
     @keyframes whatsappGlow {
       0%,
       100% {
@@ -494,6 +508,10 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+      .hero-tagline-typing::after {
+        animation: none;
+      }
+
       .whatsapp-float {
         animation: none;
         box-shadow: 0 8px 24px rgba(21, 128, 61, 0.3);
