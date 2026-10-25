@@ -259,7 +259,10 @@
       amber: 'text-amber-600 dark:text-amber-400',
     };
 
-    el.innerHTML = projects.map((p, i) => `
+    el.innerHTML = projects.map((p, i) => {
+      const projectLink = p.github || p.url;
+      const linkLabel = p.github ? 'GitHub' : 'View Proposal';
+      return `
       <div class="project-card card rounded-2xl overflow-hidden reveal group" style="transition-delay:${i * 0.1}s">
         <div class="h-1.5 bg-gradient-to-r ${topColors[p.color] || topColors.indigo}"></div>
         <div class="p-6">
@@ -290,14 +293,17 @@
               <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
               ${p.impact}
             </div>
-            <a href="${p.github}" target="_blank" rel="noopener" class="text-xs text-indigo-600 dark:text-indigo-400 hover:underline flex items-center gap-1">
-              GitHub
+            ${projectLink ? `
+            <a href="${projectLink}" target="_blank" rel="noopener" class="text-xs text-indigo-600 dark:text-indigo-400 hover:underline flex items-center gap-1">
+              ${linkLabel}
               <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             </a>
+            ` : ''}
           </div>
         </div>
       </div>
-    `).join('');
+      `;
+    }).join('');
   }
 
   /* ── Articles ───────────────────────────────────────── */

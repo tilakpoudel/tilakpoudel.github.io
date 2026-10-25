@@ -273,12 +273,17 @@
       "achievements": [
         "Developed full-stack web applications for R&D projects from concept to deployment",
         "Designed and implemented RESTful APIs with robust authentication systems",
-        "Collaborated on agile research teams delivering high-quality technical solutions"
+        "Collaborated on agile research teams delivering high-quality technical solutions",
+        "Discussed requirements with stakeholders, planned, and developed an employee management system for Lumbini Province to manage employee activities, define promotion evaluation criteria, and recommend transfers to suitable offices based on employee history"
       ],
       "chips": [
+        "PHP",
+        "Laravel",
+        "MySQL",
+        "JavaScript",
+        "React.js",
         "Node.js",
         "Vue.js",
-        "MySQL",
         "REST API"
       ]
     },
@@ -326,8 +331,8 @@
     },
     {
       "year": "2025",
-      "title": "MSc Data Science",
-      "sub": "Academic Research",
+      "title": "MDS Data Science",
+      "sub": "ChandaGyan Thesis · Ongoing",
       "icon": "chart",
       "color": "amber",
       "active": false
@@ -351,6 +356,38 @@
     }
   ],
   "projects": [
+    {
+      "title": "Community Forest Management System",
+      "category": "Web App · Forestry",
+      "color": "emerald",
+      "problem": "Community forests in Nepal needed a practical way to digitize day-to-day operations and organize operational records.",
+      "approach": "Discussed needs with stakeholders, shaped the application design, and planned and developed a system for stock, loan and debt, events, billing, and other forest-related activities.",
+      "impact": "Digitized community forest operations",
+      "impactColor": "emerald",
+      "chips": [
+        "PHP (CodeIgniter)",
+        "MySQL",
+        "jQuery",
+        "DataTables"
+      ]
+    },
+    {
+      "title": "ChandaGyan: Sanskrit Verse Correction & Meter Identification",
+      "category": "MDS Thesis · Ongoing",
+      "color": "indigo",
+      "problem": "Rule-based Sanskrit meter parsers can fail on noisy verses containing typographic errors, OCR artifacts, or missing syllables.",
+      "approach": "Re-implement the core Chandojñānam engine and augment it with a context-aware Masked Language Model for verse correction and ranked nearest-Chanda suggestions. The proposal plans to curate digitized verses from Vedabase.io and the Digital Corpus of Sanskrit, then evaluate exact-match accuracy, top-k suggestions, and robustness to noise.",
+      "impact": "Ongoing MDS thesis · Tribhuvan University",
+      "impactColor": "amber",
+      "chips": [
+        "Python",
+        "NLP",
+        "Masked Language Models",
+        "SanskritBERT",
+        "Chanda Śāstra"
+      ],
+      "url": "assets/data/Proposal-ChandaGyan-Tilak-MDS-Thesis.pdf"
+    },
     {
       "title": "Customer Segmentation via Fuzzy Clustering",
       "category": "ML · Streamlit",
