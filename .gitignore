@@ -1,3 +1,11 @@
 # OS files
 .DS_Store
 Thumbs.db
+
+# LaTeX build artifacts
+assets/cv/*.aux
+assets/cv/*.fdb_latexmk
+assets/cv/*.fls
+assets/cv/*.log
+assets/cv/*.out
+assets/cv/*.synctex.gz
